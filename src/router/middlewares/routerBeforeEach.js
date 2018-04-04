@@ -11,7 +11,7 @@ export default (router) => {
             if (_.indexOf(historyNav, `${to.name}?${to.query.ZXY}`) < 0) {
                 loading.show();
             }
-            const { title } = to.meta.title;
+            const { title } = to.meta;
             // 设置document title
             document.title = title || '默认标题';
         }

@@ -16,9 +16,7 @@ const pageNotFoundView = (resolve) => {
     require([`../views/pageNotFound/index.vue`], resolve); // eslint-disable-line
 };
 
-const title = (page) => ({
-    title: pageTitle[page]
-});
+const title = (page) => pageTitle[page];
 // 无需访问权限要求页面
 const constanRoutes = [
     {
