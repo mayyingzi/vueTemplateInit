@@ -1,4 +1,4 @@
-# Vue Boilerplate
+# Vue Demo init
 
 
 ## 环境配置
