@@ -1,0 +1,27 @@
+@import '../../assets/styles/mixins'
+
+.component-header
+    height rem(80)
+    text-align center
+    line-height rem(80)
+    position relative
+    font-size rem(32)
+    .h-main
+        background-color #ff4d6a
+        color #fff
+        position fixed
+        left 0
+        right 0
+    .left,.right
+        position absolute
+        padding 0 rem(10)
+        top 0
+        font-size rem(30)
+    .left
+        left 0
+    .right
+        right 0
+        .small
+            display block
+            font-size rem(24)
+            height rem(80)

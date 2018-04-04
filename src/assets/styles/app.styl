@@ -1,0 +1,156 @@
+@import './variables'
+@import './mixins'
+
+global-reset()
+
+html, body
+    height 100%
+    color $fcBlack
+// ios 点击高亮遮罩去掉
+a,img,button,input,textarea,label,div,section,span,p
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-touch-callout: none;
+body
+    font-size rem($fontBase)
+    color #f60
+    font-family "San Francisco Pro","PingFang SC","Helvetica Neue",Helvetica,sans-serif
+#app
+    height 100%
+    display flex
+    flex-direction column
+
+.mask
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height @width
+    background-color rgba(0, 0, 0, 0%)
+    z-index 1050
+.main-box
+    -webkit-overflow-scrolling touch
+    overflow auto
+    height 100%
+    width 100%
+    box-sizing border-box
+    position relative
+    overflow-x hidden
+.contentMain
+    box-flex 1 
+    flex 1 1 auto 
+    -webkit-overflow-scrolling touch 
+    overflow auto 
+    height 100% 
+    width 100% 
+    box-sizing border-box 
+    position absolute 
+    top 0 
+    left 0 
+    width 100% 
+    background-color $fcWhite
+    
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active 
+    will-change transform
+    transition all 500ms 
+    position  absolute 
+ 
+.slide-right-enter  
+    opacity  0 
+    transform  translate3d(-100%, 0, 0) 
+ 
+.slide-right-leave-active  
+    opacity  0 
+    transform  translate3d(100%, 0, 0) 
+ 
+.slide-left-enter  
+    opacity  0 
+    transform  translate3d(100%, 0, 0) 
+ 
+.slide-left-leave-active  
+    opacity  0 
+    transform  translate3d(-100%, 0, 0) 
+ 
+ @keyframes slideIn
+    0%
+        transform translate3d(100%, 0, 0)
+    
+    100%
+        transform translate3d(0, 0, 1)
+    
+
+@keyframes slideOut 
+    0% 
+        transform translate3d(0, 0, 1)
+    
+    100% 
+        transform translate3d(100%, 0, 0)
+
+.routePush 
+    .contentMain 
+        z-index 1 
+     
+    .slideIn-enter-active 
+        animation slideIn .3s 
+        z-index 2 
+     
+.routePop 
+    .contentMain 
+        z-index 1 
+     
+    .slideOut-leave-active 
+        animation slideOut .3s 
+        z-index 2 
+
+.slideOut-in-active 
+    z-index 1 
+
+.routePop 
+    .contentMain:first-child 
+        z-index 2 
+
+.contentMain
+    z-index 0
+
+// header
+.header
+    flex 0 0 auto
+    .back-btn
+        display block
+        width rem(80)
+        height rem(80)
+        arrowGreyLeft(0.2,0.2)
+        &:after
+            border-color #fff
+            top 40%
+            left -39%
+
+// vue-pull-to
+@keyframes loading
+    from
+        transform rotate(0deg)
+    to
+        transform rotate(360deg)
+// refresh style
+.top-load-wrapper,.bottom-load-wrapper
+    line-height 90px
+    text-align center
+    font-size rem(24)
+    color #ff4d6a
+    .icon
+        width rem(30)
+        height rem(30)
+        vertical-align -0.15em
+        fill #ff4d6a
+        overflow hidden
+    .icon-arrow
+        transition .2s
+        transform rotate(180deg)
+    .icon-loading
+        transform rotate(deg)
+        animation-name loading 
+        animation-duration 3s
+        animation-iteration-count infinite
+        animation-direction alternate

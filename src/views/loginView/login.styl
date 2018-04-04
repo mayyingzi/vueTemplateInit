@@ -1,0 +1,44 @@
+@import '../../assets/styles/mixins'
+
+$redColor = #ff4adb;
+$greyColor = #ccc;
+.loginView
+    padding rem(20)
+    font-size rem(32)
+    .demo-ajax
+        margin-top rem(20)
+        text-align center
+        color $redColor
+        padding rem(20)
+        border-radius rem(20)
+        border 1px solid $redColor
+    .login-time
+        padding rem(10)
+        background-color #fff
+        .time-item
+            position relative
+            .line
+                position absolute
+                height 100%
+                width rem(2)
+                top 0
+                left rem(14)
+                background-color $greyColor
+            .circle
+                width rem(30)
+                height rem(30)
+                background-color #fff
+                position absolute
+                left 0
+                top 0
+                i
+                    display block
+                    border rem(2) solid $redColor
+                    border-radius 50%
+                    width 100%
+                    height 100%
+                    box-sizing border-box
+            .main-txt
+                padding-left rem(60)
+                padding-bottom rem(60)
+

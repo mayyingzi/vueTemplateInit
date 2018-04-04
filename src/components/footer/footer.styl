@@ -1,0 +1,60 @@
+@import '../../assets/styles/mixins'
+
+.componet-footer
+    height rem(100)
+    width 100%
+    flex 0 0 auto    
+    .ft-main
+        position fixed
+        width 100%
+        bottom 0
+        left 0
+        height rem(100)
+        box-sizing border-box
+        display flex
+        justify-content space-between
+        align-content center
+        background-color #fff
+        border-top 1px solid #efefef
+        .ft-item
+            flex 1
+            font-size rem(20)
+            color #666
+            text-align center
+            padding-top rem(10)            
+            .ft-icon
+                width rem(50)
+                height rem(50)
+                background-repeat no-repeat
+                background-size cover
+                background-position center center
+                margin 0 auto
+            .tit
+                line-height 1.2em
+            .goods-icon
+                background-image url('../../assets/images/goodsList.png')
+            .cart-icon
+                background-image url('../../assets/images/cart.png')
+            .order-icon
+                background-image url('../../assets/images/order.png')
+            .center-icon
+                background-image url('../../assets/images/center.png')
+            .shop-icon
+                background-image url('../../assets/images/shop.png')
+            &.actived
+                .tit
+                    color #FE6601
+                .goods-icon
+                    background-image url('../../assets/images/goodsListed.png')
+                .cart-icon
+                    background-image url('../../assets/images/carted.png')
+                .order-icon
+                    background-image url('../../assets/images/ordered.png')
+                .center-icon
+                    background-image url('../../assets/images/centered.png')
+                .shop-icon
+                    background-image url('../../assets/images/shopped.png')
+                    
+
+
+        
